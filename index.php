@@ -3,7 +3,7 @@
     $servidor = "localhost";
     $usuario = "root";
     $clave = "";
-    $basededatos = "universidad_bogota";
+    $basededatos = "universidad_bogota_nueva";
 
     $enlace = mysqli_connect ($servidor, $usuario, $clave, $basededatos);
 

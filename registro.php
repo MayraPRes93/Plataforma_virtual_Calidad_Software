@@ -3,7 +3,7 @@ session_start();
 $servidor = "localhost";
 $usuario = "root";
 $clave = "";
-$basededatos = "universidad_bogota";
+$basededatos = "universidad_bogota_nueva";
 
 $enlace = mysqli_connect($servidor, $usuario, $clave, $basededatos);
 
@@ -140,11 +140,11 @@ if(isset($_POST['Registrarse'])) {
                             <label for="carrera" class="form-label">Carrera:</label>
                             <select class="form-select" name="carrera" required>
                                 <option value="">Seleccionar carrera</option>
-                                <option value="ingenieria_sistemas">Ingeniería de Sistemas</option>
-                                <option value="ingenieria_civil">Ingeniería Civil</option>
+                                <option value="sistemas">Ingeniería de Sistemas</option>
+                                <option value="civil">Ingeniería Civil</option>
                                 <option value="medicina">Medicina</option>                                
                                 <option value="derecho">Derecho</option>
-                                <option value="administracion_empresas">Administración de Empresas</option>
+                                <option value="administracion">Administración de Empresas</option>
                                 <option value="psicologia">Psicologia</option>                                
                                 <option value="arquitectura">Arquitectura</option>
                                 
@@ -237,7 +237,7 @@ if(isset($_POST['Registrarse'])) {
                 // Mostrar carga
                 materiasContainer.innerHTML = '<div class="text-center"><div class="spinner-border" role="status"></div><p class="mt-2">Cargando materias...</p></div>';
 
-                // En tu registro.php, modifica esta parte del fetch:
+                
                 fetch('obtener_materias.php?carrera=' + encodeURIComponent(carrera))
                     .then(response => {
                         if (!response.ok) {

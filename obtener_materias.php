@@ -5,7 +5,7 @@ header('Access-Control-Allow-Origin: *');
 $servidor = "localhost";
 $usuario = "root";
 $clave = "";
-$basededatos = "universidad_bogota";
+$basededatos = "universidad_bogota_nueva";
 
 $enlace = mysqli_connect($servidor, $usuario, $clave, $basededatos);
 
@@ -17,7 +17,6 @@ if (!$enlace) {
 if (isset($_GET['carrera'])) {
     $carrera = mysqli_real_escape_string($enlace, $_GET['carrera']);
     
-    // CONSULTA CON NOMBRES CORRECTOS
     $consulta = "SELECT id_materia, codigo_materia, nombre_materia, creditos_materia 
                  FROM materias 
                  WHERE carrera = '$carrera' 
